@@ -25,7 +25,7 @@ public class HashMapDemo {
     //collection classes can be used as container for other objects.		
 	Map<Integer,String> map=new HashMap<Integer,String>(1);
 
-	TreeMap<K, V>
+	
 	
 	
 	//10 => new Integer(10);
