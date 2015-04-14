@@ -1,6 +1,5 @@
 package core.java.util.logging;
 
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;

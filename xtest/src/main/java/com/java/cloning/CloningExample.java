@@ -10,7 +10,7 @@ class E implements Cloneable // if not implemented Exception in thread "main" ja
 	int i=10;
 	D d=new D();
 	@Override
-	// by default deep copy
+	// by default shallow copy
 	protected Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}

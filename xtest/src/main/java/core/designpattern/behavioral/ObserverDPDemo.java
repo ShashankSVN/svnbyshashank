@@ -57,6 +57,7 @@ class Product implements Subject{
 
 
 interface Observer{
+	
 	void update(Product product);
 		
 }
