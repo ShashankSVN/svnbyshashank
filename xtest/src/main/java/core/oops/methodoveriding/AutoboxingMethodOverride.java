@@ -3,7 +3,7 @@ package core.oops.methodoveriding;
 
 class A1
 {
-	public void print(int  i)
+	public static void print(int  i)
 	{
 		System.out.println("A");
 
@@ -19,7 +19,7 @@ class B1 extends A1
 {
 	//overriding signature should be same
 	// not depend on boxing and auto boxing and no type promotion
-	public void print(Integer i)
+	public static void print(Integer i)
 	{
 		System.out.println("B");
 	}
@@ -36,7 +36,7 @@ public class AutoboxingMethodOverride {
 	public static void main(String[] args) {
 		A1 a=new B1();
 		a.print(12);
-		a.print1(14);
+	//	a.print1(14);
 	}
 
 }

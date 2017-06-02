@@ -93,7 +93,7 @@ public class CyclicBarrierTest {
 		t1.start();
 		t2.start();
 		try {
-			// Thread.sleep(12); // Un comment this for t1 timeout to work
+		//	 Thread.sleep(14); // Un comment this for t1 timeout to work
 			barrier.await();
 			// as main thread reaches this thread waiting count
 			// reaches 3 which is given count so all thread
@@ -103,7 +103,7 @@ public class CyclicBarrierTest {
 		} catch (BrokenBarrierException e) {
 			e.printStackTrace();
 		}
-
+		
 		try {
 			t1.join();
 			t2.join();

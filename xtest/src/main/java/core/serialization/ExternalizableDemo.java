@@ -45,7 +45,7 @@ class Student  implements Externalizable{
 			ClassNotFoundException {
 		System.out.println("readExternal call");
 		id = in.read();
-	//	 name=(String)in.readObject();
+	 name=(String)in.readObject();
 	}
 }
 

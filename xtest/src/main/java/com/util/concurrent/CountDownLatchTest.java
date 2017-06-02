@@ -18,7 +18,6 @@ class T1 implements Runnable {
 			// if the count reached zero and also if the waiting time elapsed
 			// before the count reached zero
 			// no time exception thrown
-
 			countDownLatch.await(10, TimeUnit.MILLISECONDS);
 			System.out.println("T1  finish");
 		} catch (InterruptedException e) {
@@ -68,22 +67,25 @@ public class CountDownLatchTest {
 			public void run() {
 				try {
 					countDownLatch.await();
-					System.out.println("T3 start executing");
+					System.out.println(Thread.currentThread().getName()+" start executing");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		};
 		Thread t3=new Thread(runnable);
+		Thread t4=new Thread(runnable);
 		
 		
 		t1.start();
 		t2.start();
 		t3.start();
+		t4.start();
 		try {
 			t1.join();
 			t2.join();
 			t3.join();
+			t4.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

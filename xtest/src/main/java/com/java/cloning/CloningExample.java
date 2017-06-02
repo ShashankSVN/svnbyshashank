@@ -1,13 +1,19 @@
 package com.java.cloning;
 
 class D {
-	int x=11;
+	final int x;
+	
+	public D() {
+		
+		this.x=12;
+		// TODO Auto-generated constructor stub
+	}
 	
 }
 class E implements Cloneable // if not implemented Exception in thread "main" java.lang.CloneNotSupportedException: com.java.cloning.E
 // at java.lang.Object.clone(Native Method)
 {
-	int i=10;
+	//final int yu;
 	D d=new D();
 	@Override
 	// by default shallow copy

@@ -4,55 +4,52 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+class Common {
+	int data = 0;
+	Lock lock = new ReentrantLock();
+	Condition condition = lock.newCondition();
 
-class Common{
-	int data=0;
-	Lock lock=new ReentrantLock();
-	Condition condition=lock.newCondition();
-	void producer()
-	{
-		for(int i=0;i<10;i++)
-		{
+	void producer() {
+		for (int i = 0; i < 10; i++) {
 			lock.lock();
-			data=i;
+			data = i;
 			lock.unlock();
-			
+
 		}
 	}
-	void consumer()
-	{
-		for(int i=0;i<10;i++)
-		{
+
+	void consumer() {
+		for (int i = 0; i < 10; i++) {
 			lock.lock();
 			System.out.println(data);
 			lock.unlock();
 		}
 	}
-	
+
 }
 
 public class ReentrantLockProducerConsumer {
 
 	public static void main(String[] args) {
-		final Common common=new Common();
-		
-		Thread t1=new Thread(){
+		final Common common = new Common();
+
+		Thread t1 = new Thread() {
 			@Override
-			public void run(){
+			public void run() {
 				common.producer();
-				
+
 			}
-			
+
 		};
-		Thread t2=new Thread(){
+		Thread t2 = new Thread() {
 			@Override
-			public void run(){
+			public void run() {
 				common.consumer();
-				
+
 			}
-			
+
 		};
-		
+
 		t1.start();
 		t2.start();
 		try {
@@ -62,7 +59,6 @@ public class ReentrantLockProducerConsumer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 

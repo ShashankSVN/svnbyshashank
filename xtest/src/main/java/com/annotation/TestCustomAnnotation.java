@@ -3,7 +3,7 @@ import java.lang.annotation.*;
 import java.lang.reflect.*;
 
 //Creating annotation  
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
 @interface MyAnnotation {
 	int value();

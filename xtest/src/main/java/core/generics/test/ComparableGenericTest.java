@@ -71,6 +71,8 @@ public class ComparableGenericTest {
 		// public static <T extends Comparable<? super T>> void sort(List<T>
 		// list) {
 		// <Cat extends Comparable<Animal>>
+		
+		 //public static <T> void sort(List<T> list, Comparator<? super T> c)
 		Collections.sort(list2,new MyComparator());
 		for (Cat a : list2) {
 			System.out.println(a);

@@ -16,7 +16,7 @@ class Singleton1 {
 
 // lazy loading
 class Singleton2 {
-	private static Singleton2 instance;
+	private volatile static Singleton2 instance;
 
 	private Singleton2() {
 	}

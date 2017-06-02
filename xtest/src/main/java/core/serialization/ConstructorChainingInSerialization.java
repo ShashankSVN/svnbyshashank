@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
-class A {
+class A extends Object{
 	
 	A() {
 		System.out.println("A constructor called");
