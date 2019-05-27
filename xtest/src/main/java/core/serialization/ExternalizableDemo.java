@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
-class Student  implements Externalizable{
+class Student extends Object implements Externalizable{
 
 	private int id;
 	private String name;
@@ -18,7 +18,7 @@ class Student  implements Externalizable{
 	public Student() {
 		// for Externalizable default constructor required
 		//constructor must be public
-		System.out.println("default Constructor call");
+		System.out.println("default constructor call");
 	}
 
 	public Student(int id, String name) {

@@ -89,7 +89,7 @@ class DivNumbers implements Chain {
 
 public class ChainOfResponsibiltyDemo {
 
-	public static void main(String[] args) {
+	 static public void main(String[] args) {
 		Chain addChain = new AddNumbers();
 		Chain subChain = new SubNumbers();
 		Chain mulChain = new MulNumbers();

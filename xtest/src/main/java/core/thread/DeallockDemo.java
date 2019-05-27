@@ -1,5 +1,8 @@
 package core.thread;
 
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
+
 class Com {
 	private Object resource1;
 	private Object resource2;
@@ -12,8 +15,7 @@ class Com {
 	void method1() {
 		synchronized (resource1) {
 
-			System.out.println(Thread.currentThread().getName()
-					+ " got lock for resouce1");
+			System.out.println(Thread.currentThread().getName() + " got lock for resouce1");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -21,8 +23,7 @@ class Com {
 			}
 
 			synchronized (resource2) {
-				System.out.println(Thread.currentThread().getName()
-						+ "thread1 got lock for resouce2");
+				System.out.println(Thread.currentThread().getName() + "thread1 got lock for resouce2");
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
@@ -82,13 +83,52 @@ class Thread2 extends Thread {
 	}
 }
 
+class myT implements Runnable {
+
+	SoftReference<Object> reference;
+
+	public myT(SoftReference<Object> reference) {
+		this.reference = reference;
+	}
+
+	@Override
+	public void run() {
+
+		while (true) {
+			try {
+				System.out.println(reference.get());
+				Thread.sleep(1000);
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+
 public class DeallockDemo {
-	
+
 	public static void main(String[] args) throws InterruptedException {
 
 		Com com = new Com(new Object(), new Object());
 		Thread1 t1 = new Thread1(com);
 		Thread2 t2 = new Thread2(com);
+
+		Object ob = new Object();
+
+		Object ob2 = new Object();
+
+		Object ob3 = new Object();
+
+		SoftReference<Object> reference = new SoftReference<Object>(ob);
+
+		ob = null;
+
+		new Thread(new myT(reference)).start();
+
+		System.out.println(reference.get());
+
 		t1.start();
 		t2.start();
 		t1.join();

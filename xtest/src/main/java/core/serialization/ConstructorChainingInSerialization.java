@@ -41,6 +41,14 @@ class C extends B {
 
 	C() {
 		System.out.println("C constructor called");
+	
+	
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput out) throws IOException {
+		// TODO Auto-generated method stub
+		super.writeExternal(out);
 	}
 	
 }

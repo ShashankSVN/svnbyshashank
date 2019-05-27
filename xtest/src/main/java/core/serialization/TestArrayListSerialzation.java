@@ -54,17 +54,6 @@ public class TestArrayListSerialzation {
 		System.out.println("aftre deserialization");
 		System.out.println(arrayListFromDeserialization);
 		
-		
-		
-		
-		
-		
-		
-	
-		
-		
-		
-
 	}
 
 }

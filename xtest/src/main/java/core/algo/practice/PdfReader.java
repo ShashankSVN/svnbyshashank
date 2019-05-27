@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-import javax.jws.WebService;
 public class PdfReader {
 	
 		static boolean streamContainsString(Reader reader, String searchString) throws IOException {

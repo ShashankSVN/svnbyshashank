@@ -5,7 +5,18 @@ import java.util.List;
 
 
 public class MakingCollectionReadOnly {
+	
+	
+	public static void foo(Object o) {
+		System.out.println("Object impl");
+	}
+	public static void foo(String s) {
+		System.out.println("String impl");
+	}
+	
   public static void main(String[] args) {
+	  
+	  foo(null);
 	
 	    //Generic Declaration
 	    //collection classes can be used as container for other objects.		

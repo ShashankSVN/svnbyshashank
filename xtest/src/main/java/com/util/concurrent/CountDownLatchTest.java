@@ -18,7 +18,7 @@ class T1 implements Runnable {
 			// if the count reached zero and also if the waiting time elapsed
 			// before the count reached zero
 			// no time exception thrown
-			countDownLatch.await(10, TimeUnit.MILLISECONDS);
+			countDownLatch.await(1000, TimeUnit.MILLISECONDS);
 			System.out.println("T1  finish");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -42,7 +42,7 @@ class T2 implements Runnable {
 		System.out.println("Current Count: " + countDownLatch.getCount());
 		try {
 			System.out.println("Thread 2 is waiting");
-			Thread.sleep(1000);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

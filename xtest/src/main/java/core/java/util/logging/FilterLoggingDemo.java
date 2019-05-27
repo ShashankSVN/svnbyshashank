@@ -30,7 +30,7 @@ public class FilterLoggingDemo {
 
 	public static void main(String[] args) {
 		
-		LoggingExamples.init();
+		FilterLoggingDemo.init();
 
 	}
 }

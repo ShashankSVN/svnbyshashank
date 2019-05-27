@@ -13,20 +13,29 @@ class Super implements Serializable {
 		System.out.println("Super called...");
 	}
 }
-//Wants to avoid this to get serialized or deserialized 
-class Child extends Super {
 
+//Wants to avoid this to get serialized or deserialized 
+
+class Child extends Super {
+	
+	
+	
 	Child() {
 		System.out.println("Child called...");
 	}
+	
+	
+	
 }
 
 public class AvoidingNewClassToBeSerializedWhileSuperIS {
 
 	public static void main(String[] args) {
+		
 		Child child=new Child();
-		File file = new File(
-				"C:\\mySpace\\codebase\\svnbyshashank\\xtest\\src\\main\\java\\core\\serialization\\hello.txt");
+		
+		File file = new File("D:\\eclipse\\svnbyshashank\\xtest\\src\\main\\java\\core\\serialization\\hello.txt");
+		
 		try {
 			ObjectOutputStream objectOutputStream = new ObjectOutputStream(
 					new FileOutputStream(file));

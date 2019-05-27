@@ -1,5 +1,6 @@
 package core.designpattern.structural;
 
+import java.io.FilterInputStream;
 
 interface Food {
 	String prepareFood();
@@ -30,6 +31,7 @@ abstract class FoodDecorator implements Food {
 		this.food = food;
 	}
 
+	
 	@Override
 	public String prepareFood() {
 

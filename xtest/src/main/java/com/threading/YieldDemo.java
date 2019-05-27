@@ -16,7 +16,7 @@ public class YieldDemo {
 	void consume() {
 		for (int i = 0; i < 10; i++) {
 			System.out.println("Consumer: " + i);
-			Thread.yield();
+		    Thread.yield();
 		}
 
 	}
